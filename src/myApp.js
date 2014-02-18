@@ -71,7 +71,7 @@ var Helloworld = cc.Layer.extend({
         var menu = cc.Menu.create(startItem);
         menu.setPosition(0,0);
         this.addChild(menu, 1);
-        startItem.setPosition(size.width / 2, size.height / 4);
+        startItem.setPosition(size.width / 2, size.height / 3);
 
 
         return true;

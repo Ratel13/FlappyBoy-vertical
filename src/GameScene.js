@@ -85,13 +85,13 @@ var Game = cc.Layer.extend({
         this.addChild(menu, 1);
         startItem.setPosition(screenSize.width / 2, screenSize.height / 2);
 
-        var soapScoreSprite = cc.Sprite.create(s_soap);
+        var soapScoreSprite = cc.Sprite.create(s_soapBig);
         soapScoreSprite.setPosition(screenSize.width / 10, screenSize.height / 1.1);
         lazyLayer.addChild(soapScoreSprite, 5);
 
 
         soapScoreLabel = cc.LabelTTF.create(soapScoreNum.toString(), "Arial", 30);
-        soapScoreLabel.setPosition(screenSize.width / 6, screenSize.height / 1.1);
+        soapScoreLabel.setPosition(screenSize.width / 4, screenSize.height / 1.1);
         lazyLayer.addChild(soapScoreLabel, 5);
 
         return true;
@@ -106,7 +106,7 @@ var Game = cc.Layer.extend({
     },
     groundCallback: function (groundsprite,self)
     {
-        groundsprite.setPosition(screenSize.width/2+screenSize.width-10, groundSize.height/2);
+        groundsprite.setPosition(screenSize.width/2+screenSize.width-5, groundSize.height/2);
 
         var ｍoveToA = cc.MoveTo.create(s_groundSpeed*2,cc.p(-screenSize.width/2,groundsprite.getPositionY()));
 
@@ -142,31 +142,31 @@ var Game = cc.Layer.extend({
         lazyLayer.addChild(bottomSprite, 0);
 
 
-        var soapSprite = cc.Sprite.create(s_soap);
-        this.addChild(soapSprite,100);
+        var soapSprite = cc.Sprite.create(s_soapSmall);
+        this.addChild(soapSprite,0);
 
         var aNum = Math.floor(Math.random()*3);
 
         switch(aNum)
         {
             case 0:
-                topSprite.setPosition(screenSize.width, screenSize.height+screenSize.height/2);
-                bottomSprite.setPosition(screenSize.width, -screenSize.height/1.5);
+                topSprite.setPosition(screenSize.width, screenSize.height+screenSize.height/1.6);
+                bottomSprite.setPosition(screenSize.width, -screenSize.height/1.8);
 
-                soapSprite.setPosition(screenSize.width-20, screenSize.height/2);
+                soapSprite.setPosition(screenSize.width-20, screenSize.height/2.1);
 
                 break;
             case 1:
-                topSprite.setPosition(screenSize.width, screenSize.height+screenSize.height/1.8);
-                bottomSprite.setPosition(screenSize.width, -screenSize.height/1.8);
+                topSprite.setPosition(screenSize.width, screenSize.height+screenSize.height/2.2);
+                bottomSprite.setPosition(screenSize.width, -screenSize.height/1.4);
 
-                soapSprite.setPosition(screenSize.width-20, screenSize.height/1.8);
+                soapSprite.setPosition(screenSize.width-20, screenSize.height/2.3);
 
                 break;
             case 2:
                 topSprite.setPosition(screenSize.width, screenSize.height+screenSize.height/1.2);
-                bottomSprite.setPosition(screenSize.width, -screenSize.height/3);
-                soapSprite.setPosition(screenSize.width-20, screenSize.height/1.2);
+                bottomSprite.setPosition(screenSize.width, -screenSize.height/3.0);
+                soapSprite.setPosition(screenSize.width-20, screenSize.height/1.3);
 
                 break;
             default:
@@ -402,8 +402,8 @@ var GameOver = function()
     {
         medalSprite = cc.Sprite.create("res/bronzeMedal.png");
     }
-    medalSprite.setPosition(screenSize.width / 3, screenSize.height / 2.4);
-    self.addChild(medalSprite,10000);
+    medalSprite.setPosition(screenSize.width / 3.8, screenSize.height / 2.2);
+    self.addChild(medalSprite,6);
 
 
     var boardSprite = cc.Sprite.create(s_scoreBoard);
@@ -415,12 +415,12 @@ var GameOver = function()
     self.addChild(gameOverSprite, 5);
 
     var newScoreLabel = cc.LabelTTF.create(soapScoreNum.toString(), "Arial", 30);
-    newScoreLabel.setPosition(screenSize.width / 1.4, screenSize.height / 1.8);
+    newScoreLabel.setPosition(screenSize.width / 1.2, screenSize.height / 1.85);
     self.addChild(newScoreLabel, 5);
 
     var bestScore = sys.localStorage.getItem('bestScore');
     var bestScoreLabel = cc.LabelTTF.create(bestScore.toString(), "Arial", 30);
-    bestScoreLabel.setPosition(screenSize.width / 1.4, screenSize.height / 2.8);
+    bestScoreLabel.setPosition(screenSize.width / 1.2, screenSize.height / 2.45);
     self.addChild(bestScoreLabel, 5);
 
     var replayItem = cc.MenuItemImage.create

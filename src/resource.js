@@ -8,7 +8,8 @@ var s_Bird2 = "res/Bird2.png";
 var s_Ground = "res/Ground.png";
 var s_PipeTop = "res/PipeTop.png";
 var s_PipeBottom = "res/PipeBottom.png";
-var s_soap = "res/soap.png";
+var s_soapBig = "res/soapBig.png";
+var s_soapSmall = "res/soapSmall.png";
 var s_scoreBoard = "res/scoreBoard.png";
 var s_gameOver = "res/gameOver.png";
 var s_replayBtn1 = "res/replayBtn1.png";
@@ -29,7 +30,8 @@ var g_resources = [
     {src:s_Ground},
     {src:s_PipeTop},
     {src:s_PipeBottom},
-    {src:s_soap},
+    {src:s_soapBig},
+    {src:s_soapSmall},
     {src:s_scoreBoard},
     {src:s_gameOver},
     {src:s_replayBtn1},
